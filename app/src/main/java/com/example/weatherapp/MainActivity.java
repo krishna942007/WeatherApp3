@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     private HourlyForecastAdapter hourlyForecastAdapter;
     private DailyForecastAdapter dailyForecastAdapter;
 
-    private final String API_KEY = "5b9ce66184156a6bc6d0e92b7484062e";
+    private final String API_KEY = "f4ca2ef9344960e56a6353f1648472df";
     private String CITY_NAME;
 
     @Override
@@ -45,6 +45,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Find the VideoView in the layout
+        VideoView videoView = findViewById(R.id.video_view);
+
+        // Set the path to the video file in the res/raw directory
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.sunnyback;
+        Uri uri = Uri.parse(videoPath);
+        videoView.setVideoURI(uri);
+
+        // Set the video to loop
+        videoView.setOnCompletionListener(mp -> videoView.start());
+
+        // Start the video automatically
+        videoView.start();
 
         cityInput = findViewById(R.id.city_input);
         fetchWeatherButton = findViewById(R.id.fetch_weather_button);
@@ -75,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
     private void fetchWeatherData() {
         OkHttpClient client = new OkHttpClient();
 

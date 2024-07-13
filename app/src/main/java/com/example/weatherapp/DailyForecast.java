@@ -1,5 +1,4 @@
 package com.example.weatherapp;
-
 public class DailyForecast {
     private final String date;
     private final String temp;

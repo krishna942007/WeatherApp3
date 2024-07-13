@@ -3,15 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/back">
+    tools:context=".MainActivity">
+
+    <VideoView
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="-2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="2dp"
+        android:scaleType="centerCrop" />
+
     <EditText
         android:id="@+id/city_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter city name"
         android:layout_margin="16dp"
-        android:padding="12dp" />
+        android:background="@android:color/transparent"
+        android:hint="Enter city name"
+        android:padding="12dp"
+        android:paddingTop="150dp"
+        android:textColor="@android:color/white" />
 
     <Button
         android:id="@+id/fetch_weather_button"
@@ -20,14 +37,16 @@
         android:text="Fetch Weather"
         android:layout_below="@id/city_input"
         android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@android:color/holo_blue_light" />
 
     <TextView
         android:id="@+id/location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Location"
-        android:textSize="40dp"
+        android:textSize="24sp"
+        android:textColor="@android:color/white"
         android:layout_below="@id/fetch_weather_button"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true" />
@@ -38,6 +57,7 @@
         android:layout_height="wrap_content"
         android:text="Temperature"
         android:textSize="48sp"
+        android:textColor="@android:color/white"
         android:layout_below="@id/location"
         android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true" />
@@ -48,6 +68,7 @@
         android:layout_height="wrap_content"
         android:text="Condition"
         android:textSize="24sp"
+        android:textColor="@android:color/white"
         android:layout_below="@id/temperature"
         android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true" />
@@ -58,6 +79,7 @@
         android:layout_height="wrap_content"
         android:text="Min ~ Max"
         android:textSize="18sp"
+        android:textColor="@android:color/white"
         android:layout_below="@id/weather_condition"
         android:layout_marginTop="8dp"
         android:layout_centerHorizontal="true" />
@@ -67,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/temperature_range"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="46dp"
         android:layout_marginBottom="8dp"
         android:padding="8dp" />
 
@@ -76,6 +98,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/hourly_recycler_view"
+        android:layout_marginTop="49dp"
         android:layout_marginBottom="16dp"
         android:padding="8dp" />
 
